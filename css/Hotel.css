@@ -1,0 +1,648 @@
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans+TC:300,400,500,700,900&display=swap");
+@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css");
+
+* {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	font-family: 'Noto Sans TC', sans-serif;
+}
+
+.bg-cover {
+	background-size: cover;
+	background-position: center center;
+	height: calc(100vh - 50px);
+	widows: 610px;
+}
+
+.wrap {
+	max-width: 1440px;
+	margin: auto;
+}
+
+.header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	position: fixed;
+	top: 0;
+	left: 0;
+	padding: 5px 0;
+	background-color: #fff;
+	box-shadow: 0 5px 5px -2px #ccc;
+	width: 1440px;
+	z-index: 10;
+}
+
+.header .menu,
+.header .logo,
+.header .information {
+	width: 400px;
+}
+
+.header .logo {
+	text-align: center;
+}
+
+.header .logo img {
+	width: 35px;
+	height: 35px;
+}
+
+.header .information {
+	display: flex;
+	justify-content: flex-end;
+}
+
+.header ul {
+	display: flex;
+}
+
+.header ul li {
+	padding: 0 15px;
+}
+
+.header ul li a {
+	text-decoration: none;
+	color: #000;
+}
+
+.header ul li .fa-map-marker {
+	padding-right: 5px;
+}
+
+.header .fa {
+	font-size: 18px;
+}
+
+.container {
+	background-image: url(../images/background.png);
+	background-size: cover;
+	width: 1440px;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.container ul {
+	display: flex;
+}
+
+.container ul li {
+	width: 150px;
+	height: 300px;
+	position: relative;
+	box-sizing: border-box;
+	transform: skewX(-10deg);
+}
+
+.container ul li:nth-child(odd) {
+	top: -100px;
+	margin-right: -35px;
+}
+
+.container ul li:nth-child(even) {
+	top: 100px;
+	margin-right: 35px;
+}
+
+.container ul li img {
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+
+.container ul li h3 {
+	position: absolute;
+	bottom: 0;
+	font-size: 14px;
+	width: 100%;
+	height: 60px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #fff;
+	background-color: rgba(0, 0, 0, .5);
+	opacity: 1;
+}
+
+.container .price {
+	width: 150px;
+	height: 300px;
+	background-color: rgba(0, 0, 0, .3);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	top: 0;
+	opacity: 0;
+	transition: .5s;
+}
+
+.container .price:hover {
+	opacity: 1;
+}
+
+.container .price p {
+	color: #fff;
+	line-height: 2em;
+}
+
+.container .price hr {
+	width: 30px;
+	height: 2px;
+	background-color: #fff;
+	border: none;
+	margin-top: 5px;
+}
+
+#siderbar_switch {
+	position: absolute;
+	top: -10px;
+	left: -10px;
+	z-index: -1;
+}
+
+.fa-bars {
+	display: none;
+}
+
+@media screen and (max-width: 768px) {
+	.wrap {
+		max-width: 100vw;
+	}
+
+	.header {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100vw;
+	}
+
+	.header .logo {
+		width: 60px;
+	}
+
+	.fa-bars {
+		display: block;
+	}
+
+	.header .information {
+		position: absolute;
+		justify-content: flex-start;
+		left: -250px;
+		width: 250px;
+		height: 100vh;
+		top: 50px;
+		background-color: #fff;
+		opacity: .7;
+		transition: .3s;
+		z-index: 10;
+	}
+
+	.information ul {
+		flex-direction: column;
+	}
+
+	.information li {
+		margin: 10px 0;
+	}
+
+	#siderbar_switch:checked~.header .information {
+		transform: translateX(100%);
+	}
+
+	.container {
+		margin-top: 50px;
+		width: 100%;
+		height: 100%;
+	}
+
+	.container ul {
+		height: 100%;
+		flex-direction: column;
+	}
+
+	.container ul li {
+		transform: skewX(0deg);
+		margin: 20px 0;
+		width: 300px;
+		height: 350px;
+	}
+
+	.container ul li h3 {
+		font-size: 20px;
+	}
+
+	.container ul li:nth-child(odd) {
+		top: 0;
+		margin-right: 0;
+	}
+
+	.container ul li:nth-child(even) {
+		top: 0;
+		margin-right: 0;
+	}
+
+	.container .price {
+		width: 100%;
+		height: 290px;
+	}
+
+	.container .price p {
+		font-size: 22px;
+	}
+
+	.room {
+		flex-direction: column;
+		overflow: hidden;
+	}
+
+	.room .swiper-container {
+		height: 700px;
+	}
+
+	.room .roomint {
+		margin-top: 0;
+		margin-left: 0;
+	}
+
+	.roomint .roomcontent {
+		width: auto;
+	}
+
+	.roomint .roomcontent .title {
+		flex-wrap: wrap;
+		justify-content: center;
+		width: auto;
+	}
+
+	.roomint .title h2 {
+		font-size: 40px;
+	}
+
+	.roomint .roomcontent .device {
+		width: auto;
+	}
+
+
+	.roomint .roomcontent .checktime {
+		text-align: left;
+		margin-top: 20px;
+	}
+
+	.roomint .roomcontent .checktime p {
+		font-size: 18px;
+	}
+
+	.roomint .device ul {
+		flex-wrap: wrap;
+		padding: 0 10px;
+	}
+
+	.roomint .device ul .roomprice {
+		font-size: 18px;
+		width: 100%;
+		text-align: center;
+		margin-bottom: 10px;
+	}
+
+	.roomint .introduction {
+		width: auto;
+		padding: 20px 10px;
+
+	}
+
+	.roomint .facility {
+		align-items: center;
+		width: 100%;
+	}
+
+	.roomint .introduction hr {
+		margin: 10px auto;
+	}
+
+	.roomint .booking {
+		width: auto;
+		flex-wrap: wrap;
+	}
+
+	.roomint .booking .bk-container {
+		width: 300px;
+		height: 270px;
+	}
+
+	.roomint .booking .card {
+		margin-top: 10px;
+	}
+
+	.roomint .booking form {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.roomint form .contact {
+		padding: 10px 0;
+		align-items: center;
+	}
+
+	.booking .btn {
+		height: 50px;
+		margin-bottom: 20px;
+	}
+
+	.footer {
+		/*margin-top: 20px;*/
+		width: 100%;
+		height: 50px;
+		background-color: #ccc;
+		opacity: .3;
+	}
+}
+
+
+
+
+.room {
+	display: flex;
+	padding-top: 50px;
+}
+
+.swiper-container {
+	width: 100%;
+	height: 100%;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+	color: #000;
+	opacity: .3;
+}
+
+.roomint {
+	display: flex;
+	flex-direction: column;
+	margin-top: 10px;
+	margin-left: 30px;
+	position: relative;
+}
+
+.facility {
+	width: 400px;
+	display: flex;
+	justify-content: center;
+}
+
+.facility-outside {
+	height: 200px;
+	width: 200px;
+	background-color: #000;
+	border-radius: 10px;
+}
+
+.facility .facility-content {
+	padding: 10px 15px;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	height: 180px;
+}
+
+.facility span {
+	color: #fff;
+	margin-top: 1px;
+}
+
+.facility .fa-check {
+	color: #000;
+	background-color: #fff;
+	border-radius: 50%;
+	margin-right: 3px;
+}
+
+.facility .nofacility {
+	position: relative;
+	width: max-content;
+	color: #ccc;
+}
+
+.facility .nofacility::before {
+	content: '';
+	width: 10px;
+	height: 2px;
+	background-color: #ccc;
+	position: absolute;
+	top: 50%;
+	width: 100%;
+}
+
+.roomcontent {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.roomcontent .title {
+	display: flex;
+	justify-content: space-between;
+	width: 70%;
+}
+
+.title h2 {
+	font-size: 30px;
+	font-weight: 500;
+}
+
+.roomcontent .checktime {
+	text-align: right;
+}
+
+.roomcontent .device {
+	width: 70%;
+}
+
+.roomcontent .device ul {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+}
+
+.device span {
+	font-weight: 500;
+}
+
+.device li+li {
+	display: flex;
+	align-items: center;
+}
+
+.roomcontent .device {
+	margin: 40px 0 40px 0;
+}
+
+.introduction {
+	width: 400px;
+}
+
+.introduction hr {
+	border: 0;
+	width: 50px;
+	height: 2px;
+	background-color: #000;
+	margin-bottom: 10px;
+}
+
+.introduction p {
+	text-align: justify;
+}
+
+.line {
+	width: 95%;
+	margin: 30px auto;
+}
+
+.booking {
+	display: flex;
+	justify-content: space-around;
+	width: 800px;
+}
+
+.booking form {
+	width: 400px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.booking h3 {
+	display: inline-block;
+}
+
+.booking button {
+	margin-left: 20px;
+	padding: 0 10px;
+	border-radius: 10px;
+	border: 1px solid #ccc;
+	font-size: 14px;
+}
+
+.booking .calendar {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 280px;
+}
+
+.booking .date {
+	border: 1px solid #ccc;
+	padding: 10px;
+	border-collapse: collapse;
+}
+
+.date .week {
+	border-bottom: 1px solid #ccc;
+	border-top: 1px solid #ccc;
+}
+
+.date thead .year,
+.date .week th {
+	padding: 5px;
+}
+
+.date tbody td {
+	text-align: center;
+	padding: 3px 0;
+}
+
+.contact {
+	display: flex;
+	flex-direction: column;
+}
+
+.contact input {
+	font-size: 16px;
+	padding: .3em;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+.contact div {
+	margin: 10px 0;
+}
+
+.btn {
+	display: flex;
+	align-items: flex-end;
+	height: 75px;
+}
+
+.btn input {
+	font-size: 16px;
+	width: 120px;
+	height: 40px;
+	border-radius: 10px;
+	border: 3px double #fff;
+	background-color: #000;
+	color: #fff;
+}
+
+.btn input:hover {
+	cursor: pointer;
+}
+
+.booking .card {
+	border: 1px solid #ccc;
+	padding: 10px;
+	margin-top: 10px;
+}
+
+.card .form-inline {
+	display: flex;
+	justify-content: space-between;
+}
+
+.card .table {
+	border-collapse: collapse;
+	margin: 5px 0;
+}
+
+.card thead {
+	border-top: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+}
+
+.card thead th {
+	padding: 5px;
+}
+
+.card tbody td {
+	text-align: center;
+	line-height: 25px;
+}
+
+.card span {
+	cursor: pointer;
+}
+
+.bg-info {
+	color: blue;
+}
+
+.orderDate {
+	color: #fff;
+	background-color: #ccc;
+}
+
+.checkDate {
+	color: #fff;
+	background-color: #ffc1e0;
+}
+
+.orderColor,
+.dateBefore {
+	color: #ccc;
+}
+
+.errorColor {
+	color: red;
+}

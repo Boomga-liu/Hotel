@@ -1,0 +1,317 @@
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans+TC:300,400,500,700,900&display=swap");
+@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css");
+
+* {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	font-family: 'Noto Sans TC', sans-serif;
+}
+
+.wrap {
+	max-width: 1440px;
+	margin: auto;
+}
+
+.header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	position: fixed;
+	top: 0;
+	left: 0;
+	padding: 5px 0;
+	background-color: #fff;
+	box-shadow: 0 5px 5px -2px #ccc;
+	width: 1440px;
+	z-index: 10;
+}
+
+.header .menu,
+.header .logo,
+.header .information {
+	width: 400px;
+}
+
+.header .logo {
+	text-align: center;
+}
+
+.header .logo img {
+	width: 35px;
+	height: 35px;
+}
+
+.header .information {
+	display: flex;
+	justify-content: flex-end;
+}
+
+.header ul {
+	display: flex;
+}
+
+.header ul li {
+	padding: 0 15px;
+}
+
+.header ul li a {
+	text-decoration: none;
+	color: #000;
+}
+
+.header ul li .fa-map-marker {
+	padding-right: 5px;
+}
+
+.header .fa {
+	font-size: 18px;
+}
+
+#siderbar_switch {
+	position: absolute;
+	top: -10px;
+	left: -10px;
+	z-index: -1;
+}
+
+.fa-bars {
+	display: none;
+}
+
+/*CheckPage*/
+
+.container {
+	background-image: url(../images/background.png);
+	background-size: cover;
+	background-position: center center;
+	width: 1440px;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.all {
+	width: 1000px;
+}
+
+.container .title {
+	padding-top: 90px;
+	font-size: 24px;
+}
+
+.checkarea {
+	padding-top: 50px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.checkarea p {
+	font-size: 20px;
+}
+
+.checkarea span {
+	margin-left: 40px;
+}
+
+.line {
+	border: 1px solid #ccc;
+	margin: 20px 0;
+}
+
+.text {
+	line-height: 2.3;
+}
+
+.image {
+	display: flex;
+	justify-content: space-around;
+}
+
+.image div {
+	background-size: cover;
+	background-position: center center;
+	width: 170px;
+	height: 130px;
+	box-shadow: 0 0 6px #808080;
+}
+
+.image div+div {
+	margin-left: 25px;
+}
+
+.btn {
+	display: flex;
+	justify-content: space-between;
+}
+
+.btn input {
+	font-size: 16px;
+	width: 120px;
+	height: 40px;
+	border-radius: 10px;
+	border: 3px double #fff;
+	background-color: #000;
+	color: #fff;
+}
+
+.btn input:hover {
+	cursor: pointer;
+}
+
+.model-back {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, .5);
+}
+
+.model-content {
+	background-color: #fff;
+	width: 30%;
+	z-index: 1;
+	margin: 15% auto;
+	padding: 50px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.textcontent .image {
+	margin-bottom: 20px;
+}
+
+.textcontent p:nth-child(2) {
+	margin-bottom: 40px;
+}
+
+.textcontent p+p {
+	margin-bottom: 10px;
+}
+
+.home-link {
+	margin-top: 20px;
+}
+
+.home-link a {
+	text-decoration: none;
+	color: #000;
+	transition: .3s;
+}
+
+.home-link a:hover {
+	color: #ccc;
+}
+
+.home-link hr {
+	border: 1px solid #000;
+	width: 50%;
+	margin: 5px auto;
+}
+
+@media screen and (max-width: 768px) {
+	.wrap {
+		max-width: 100vw;
+	}
+
+
+	.header {
+		width: 100vw;
+	}
+
+	.header .logo {
+		width: 60px;
+	}
+
+	.fa-bars {
+		display: block;
+	}
+
+	.header .information {
+		position: absolute;
+		justify-content: flex-start;
+		left: -250px;
+		width: 250px;
+		height: 100vh;
+		top: 50px;
+		background-color: #fff;
+		opacity: .7;
+		transition: .3s;
+		z-index: 10;
+	}
+
+	.information ul {
+		flex-direction: column;
+	}
+
+	.information li {
+		margin: 10px 0;
+	}
+
+	#siderbar_switch:checked~.header .information {
+		transform: translateX(100%);
+	}
+
+	.container {
+		width: 100%;
+		height: 100%;
+	}
+
+	.all {
+		width: 100%;
+	}
+
+	.title {
+		text-align: center;
+	}
+
+	.text {
+		padding: 0 35px;
+	}
+
+	.text p {
+		font-size: 18px;
+	}
+
+	.checkarea {
+		flex-direction: column;
+	}
+
+	.image {
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.image div {
+		width: 300px;
+		height: 200px;
+		margin-top: 30px;
+	}
+
+	.image div+div {
+		margin-left: 0;
+	}
+
+	.btn {
+		justify-content: space-around;
+		padding: 10px 0 20px 0;
+	}
+
+	.footer {
+		width: 100%;
+		height: 50px;
+		background-color: #ccc;
+		opacity: .3;
+	}
+
+	.model-content {
+		margin: 50% auto;
+		width: 70%;
+	}
+
+}

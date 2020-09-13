@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>白邸-Single Room</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	<link rel="icon" type="image/x-icon" href="https://upload.cc/i1/2020/05/30/1OezLn.png" sizes="16x16" />
+	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+	<link rel="stylesheet" href="../css/Hotel.css">
+</head>
+
+<body>
+	<div class="wrap">
+		<input type="checkbox" id="siderbar_switch">
+		<div class="header">
+			<nav class="menu">
+				<ul>
+					<li>
+						<label for="siderbar_switch">
+							<i class="fa fa-bars" aria-hidden="true"></i>
+						</label>
+					</li>
+				</ul>
+			</nav>
+			<div class="logo">
+				<a href="../index.html">
+					<img src="../images/logo.png" alt="">
+				</a>
+			</div>
+			<div class="information">
+				<ul>
+					<li>
+						<a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i>台中市幸福區幸福路100號</a>
+					</li>
+					<li>
+						<a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+					</li>
+					<li>
+						<a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="room">
+			<div class="swiper-container">
+				<div class="roomimg swiper-wrapper">
+					<div class="swiper-slide">
+						<div class="bg-cover" style="background-image: url(../images/image1.png);"></div>
+					</div>
+					<div class="swiper-slide">
+						<div class="bg-cover" style="background-image: url(../images/swiperimg2.png);"></div>
+					</div>
+					<div class="swiper-slide">
+						<div class="bg-cover" style="background-image: url(../images/swiperimg3.png);"></div>
+					</div>
+				</div>
+				<div class="swiper-pagination"></div>
+				<div class="swiper-button-prev"></div>
+				<div class="swiper-button-next"></div>
+			</div>
+			<div class="roomint">
+				<div class="roomcontent">
+					<div class="title">
+						<h2 class="roomName">Single Room</h2>
+						<div class="checktime">
+							<p>checkIn時間：15:00-21:00</p>
+							<p>checkOut時間：10:00</p>
+						</div>
+					</div>
+					<div class="device">
+						<ul>
+							<li class="roomprice">
+								<p>平日(一-四)：<span>＄1380</span></p>
+								<p>假日(五-日)：<span>＄1500</span></p>
+							</li>
+							<li>
+								<img src="../hotel/images/onemanbed.png" alt="" width="32px" height="32px">
+								<p>單人床</p>
+							</li>
+							<li>
+								<img src="../hotel/images/people.png" alt="" width="32px" height="32px">
+								<p>人數x1</p>
+							</li>
+							<li>
+								<img src="../hotel/images/bathroom.png" alt="" width="32px" height="32px"
+									style="padding-right: 3px">
+								<p>衛浴x1</p>
+							</li>
+						</ul>
+					</div>
+					<div class="introduction">
+						<hr>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt reiciendis nihil minima nisi
+							omnis officia, esse, rem voluptates, laborum quasi deleniti delectus! Autem aliquam incidunt
+							aperiam quod minima accusamus.</p>
+					</div>
+					<div class="facility">
+						<div class="facility-outside">
+							<div class="facility-content">
+								<span><i class="fa fa-check" aria-hidden="true"></i>WiFi</span>
+								<span><i class="fa fa-check" aria-hidden="true"></i>早餐</span>
+								<span><i class="fa fa-check" aria-hidden="true"></i>電話</span>
+								<span><i class="fa fa-check" aria-hidden="true"></i>空調</span>
+								<span><i class="fa fa-check" aria-hidden="true"></i>冰箱</span>
+								<span><i class="fa fa-check" aria-hidden="true"></i>禁止吸煙</span>
+								<span><i class="fa fa-check" aria-hidden="true"></i>寵物攜帶</span>
+								<span class="nofacility">Mini Bar</span>
+								<span class="nofacility">沙發</span>
+								<span class="nofacility">漂亮的視野</span>
+								<span class="nofacility">適合兒童</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<hr class="line">
+				<div class="booking">
+					<div class="bk-container">
+						<h3>可訂房日期</h3>
+						<button id="resetDate" onclick="reset_Date()">重選日期</button>
+						<button id="checkDate" onclick="check_Date()">確定日期</button>
+						<div class="card">
+							<div class="form-inline">
+								<a class="bk-btn" id="previous" onclick="previous()"><i
+										class="fa fa-chevron-left"></i></a>
+								<h3 class="card-header" id="monthAndYear"></h3>
+								<a class="bk-btn" id="next" onclick="next()">
+									<i class="fa fa-chevron-right"></i>
+								</a>
+							</div>
+							<table class="table" id="calendar">
+								<thead>
+									<tr>
+										<th>Sun</th>
+										<th>Mon</th>
+										<th>Tue</th>
+										<th>Wed</th>
+										<th>Thu</th>
+										<th>Fri</th>
+										<th>Sat</th>
+									</tr>
+								</thead>
+								<tbody id="calendar-body">
+
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<form>
+						<div class="contact">
+							<h3>留下聯絡資訊，立即預約</h3>
+							<div id="nameArea">
+								<input type="text" placeholder="姓名" name="name" id="jsName">
+							</div>
+							<div id="phoneArea">
+								<input type="tel" placeholder="電話" name="phone" id="jsPhone">
+							</div>
+							<div id="dateArea" style="display: none;">
+								<input type="text" placeholder="住宿日期" name="date" id="jsDate">
+							</div>
+							<div id="amountArea" style="display: none;">
+								<input type="text" placeholder="金額" name="Amount" id="jsAmount">
+							</div>
+							<div id="roomName" style="display: none;">
+								<input type="text" placeholder="房間型號" name="roomName" id="jsRoomName">
+							</div>
+						</div>
+						<div class="btn">
+							<input type="submit" id="orderCheck" value="我要預約" onclick="submitInfo(event)">
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="footer"></div>
+	</div>
+	<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+	<script src="../js/HotelRoom.js"></script>
+</body>
+
+</html>
