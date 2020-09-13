@@ -172,12 +172,12 @@ function check_Date() {
     }
 }
 // 確認日期後變更顏色
-function check_Date_color (argument) {
+function check_Date_color(argument) {
     let date = document.querySelectorAll("td");
-    for(let i = 0; i < date.length; i++){
+    for (let i = 0; i < date.length; i++) {
         if (date[i].className === "orderDate") {
             date[i].classList.remove("orderDate");
-             date[i].classList.add("checkDate");
+            date[i].classList.add("checkDate");
         }
     }
 }
@@ -244,7 +244,8 @@ function submitInfo(event) {
 
     if (dateArea.lastElementChild.value === "") {
         // dateArea.appendChild(createErrorMessage("請選擇日期"));
-        alert('請確定日期！')
+        alert('請確定日期！');
+        return;
     } else {
         if (
             dateArea.lastElementChild.tagName === "P" &&
