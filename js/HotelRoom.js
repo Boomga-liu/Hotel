@@ -138,6 +138,10 @@ function check_Date() {
     let dateArray = [];
     let priceArry = [];
     let str = "";
+    if (jsDate.value != '') {
+        return;
+    };
+
     for (let i = 0; i < allDate.length; i++) {
         if (allDate[i].className === "orderDate") {
             priceArry.push(allDate[i].cellIndex);
@@ -147,8 +151,12 @@ function check_Date() {
     let price = priceCount(priceArry);
     if (dateArray.length === 0) {
         alert('請選擇日期');
+        return;
+
     } else if (dateArray.length >= 90) {
         alert('訂房天數不得超過90天');
+        return;
+
     } else {
         // 判斷選取的日期中間是否為空白
         let arraylen = dateArray.length;
