@@ -5,4 +5,6 @@
 ![image](images/README-home.png)
 
 ## 房間資訊
+* 房間圖片使用 Swiper 輪播套件
+* 使用原生 JavaScript 實現使用者互動
 ![image](images/README-room.png)
